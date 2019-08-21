@@ -1,7 +1,23 @@
-<%= link_to 'Add New Auditorium', new_manage_auditorium_path %>
+<p><%= link_to 'Add New Auditorium', new_manage_auditorium_path, class: 'btn btn-primary' %></p>
 
-<% @auditoriums.each do |auditorium| %>
 
-	<%= auditorium.name %>
-	<%= auditorium.capacity %>
-<% end %>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Capacity</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @auditoriums.each do |auditorium| %>
+	    <tr>
+	      <td><span class="lead"><%= auditorium.name %></span></td>
+	      <td><span class="badge badge-info"><%= auditorium.capacity %></td>
+	      <td><%= link_to 'view', manage_auditorium_path(auditorium) %> | <%= link_to 'edit', edit_manage_auditorium_path(auditorium) %></td>
+	    </tr>
+    <% end %>
+  </tbody>
+</table>
+

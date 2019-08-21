@@ -1,3 +1,5 @@
-<%= simple_form_for @auditorium, url: manage_auditoriums_path do |f| %>
+<%= simple_form_for @auditorium, url: manage_auditorium_path do |f| %>
 	<%= render 'form', :f => f %>
 <% end %>
+<%= link_to 'Delete', manage_auditorium_path(@auditorium),
+                    method: :delete, data: { confirm: 'Are you sure?' }   %>

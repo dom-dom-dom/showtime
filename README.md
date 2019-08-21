@@ -14,3 +14,4 @@
 ### Requirements
 - [ ] Customers can only buy one ticket at a time
 - [ ] Valid checkout includes name, email, credit card, and expiration date
+- [ ] Must work on mobile

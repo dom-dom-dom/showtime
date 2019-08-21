@@ -1,6 +1,6 @@
-<%= link_to 'Add New Auditorium', new_manage_auditorium_path %>
 
-
-
-	<%= @auditorium.name %>
-	<%= @auditorium.capacity %>
+<div class="jumbotron">
+	<%= link_to 'Edit auditorium', edit_manage_auditorium_path(@auditorium), class: "btn btn-primary float-right"  %>
+	<h1><%= @auditorium.name %></h1>
+	<small>capacity: <%= @auditorium.capacity %></small>
+</div>
