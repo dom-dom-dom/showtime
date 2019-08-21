@@ -1,0 +1,7 @@
+<%= link_to 'Add New Auditorium', new_manage_auditorium_path %>
+
+<% @auditoriums.each do |auditorium| %>
+
+	<%= auditorium.name %>
+	<%= auditorium.capacity %>
+<% end %>
