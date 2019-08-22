@@ -2,6 +2,7 @@
 ### As a theater owner
 - [x] I should be able to add auditoriums and their seating compacities
 - [ ] I should be able to assign movies to auditoriums
+- [ ] I should be able to add screenings to movies
 - [ ] I should see a list of total orders
 - [ ] I should see a list of orders for each movie
 
