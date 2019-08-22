@@ -1,0 +1,24 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Movie</th>
+      <th scope="col">Screening</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+	<% @orders.each do |order| %>
+		<tr>
+	      <th scope="row"><%= order.id %></th>
+	      <td><%= order.movie %></td>
+	      <td><%= decorated_date(order.screening.start) %></td>
+	      <td><%= order.name %></td>
+	      <td><%= order.email %></td>
+	      <td><%= decorated_date(order.created_at) %></td>
+	    </tr>
+	<% end %>
+ </tbody>
+</table>

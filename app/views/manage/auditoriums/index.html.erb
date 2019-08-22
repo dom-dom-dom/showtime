@@ -1,7 +1,7 @@
 <p><%= link_to 'Add New Auditorium', new_manage_auditorium_path, class: 'btn btn-primary' %></p>
 
 
-
+<div class="table-responsive">
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -14,10 +14,11 @@
   	<% @auditoriums.each do |auditorium| %>
 	    <tr>
 	      <td><span class="lead"><%= auditorium.name %></span></td>
-	      <td><span class="badge badge-info"><%= auditorium.capacity %></td>
+	      <td><span class="badge badge-info"><%= auditorium.capacity %></span></td>
 	      <td><%= link_to 'view', manage_auditorium_path(auditorium) %> | <%= link_to 'edit', edit_manage_auditorium_path(auditorium) %></td>
 	    </tr>
     <% end %>
   </tbody>
 </table>
 
+</div>

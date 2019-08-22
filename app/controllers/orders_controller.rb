@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
 	def create
 		@screening = Screening.find(params[:screening_id])
 		@order = @screening.orders.new(order_params)
-
+		@order.movie = @screening.movie
 		if @order.save
 			@order.screening.seats -= 1
 			@order.screening.save

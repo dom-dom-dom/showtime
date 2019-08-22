@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+ 
   resources :movies, only: [:index,:show] 
 
   resources :screenings, only: [:show] do
@@ -8,9 +9,11 @@ Rails.application.routes.draw do
 
 
   namespace :manage do
+    get '', to: 'static#dashboard', as: '/'
   	resources :auditoriums
     resources :movies
     resources :screenings
+    resources :orders
   end
 
   root to: "movies#index"

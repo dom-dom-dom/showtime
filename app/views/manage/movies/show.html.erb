@@ -1,10 +1,40 @@
-<%= @movie %>
-<%= @movie.auditorium %>
+<p><%= link_to 'add a screening', new_manage_screening_path, class: "btn btn-primary float-right" %></p>
 
-<p><%= link_to 'add a screening', new_manage_screening_path %></p>
-
-<ul>
-	<% @movie.screenings.each do |screening| %>
-		<li><%= decorated_date(screening.start) %></li>
-	<% end %>
-</ul>
+<h1><%= @movie %></h1>
+<p>auditorium: <%= @movie.auditorium %></p>
+<hr/>
+<div class="row">
+<div class="col-sm-5">
+	<h2>Screenings</h2>
+	<ul class="list-group">
+		<% @movie.screenings.each do |screening| %>
+			<li class="list-group-item"><%= decorated_date(screening.start) %> <small>(<%= screening.seats %> seats remaining)</small></li>
+		<% end %>
+	</ul>
+</div>
+<div class="col-sm-7">
+	<h2>Orders</h2>
+	<div class="table-responsive">
+	<table class="table table-bordered">
+	  <thead>
+	    <tr>
+	      <th scope="col">Screening</th>
+	      <th scope="col">Name</th>
+	      <th scope="col">Email</th>
+	      <th scope="col">Date</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+		<% @movie.orders.each do |order| %>
+			<tr>
+		      <td><%= decorated_date(order.screening.start) %></td>
+		      <td><%= order.name %></td>
+		      <td><%= order.email %></td>
+		      <td><%= decorated_date(order.created_at) %></td>
+		    </tr>
+		<% end %>
+	 </tbody>
+	</table>
+</div>
+</div>
+</div>

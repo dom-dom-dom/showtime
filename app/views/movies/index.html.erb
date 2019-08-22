@@ -1,6 +1,7 @@
-<div class="card-deck">
-	<% @movies.each do |movie| %>
-		<div class="card" style="width: 18rem;">
+<div class="row">
+<% @movies.each do |movie| %>
+	<div class="col-sm-12 col-md-12 col-lg-4">
+		<div class="card">
 		  <div class="card-body">
 		    <h5 class="card-title"><%= movie %></h5>
 		    <p class="card-text">Playing in auditorium <%= movie.auditorium %></p>
@@ -20,5 +21,6 @@
 		    <%= link_to 'View more screenings', movie_path(movie) %>
 		  </div>
 		</div>
-	<% end %>
+	</div>
+<% end %>
 </div>

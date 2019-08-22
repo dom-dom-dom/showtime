@@ -1,3 +1,5 @@
-<% @movies.each do |movie| %>
-	<%= movie %>
-<% end %>
+<ul class="list-group">
+	<% @movies.each do |movie| %>
+		<li class="list-group-item"><%= link_to movie, manage_movie_path(movie) %></li>
+	<% end %>
+</ul>
