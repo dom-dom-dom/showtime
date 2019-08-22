@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :movies, only: [:index,:show]
+  resources :movies, only: [:index,:show] 
+
+  resources :screenings, only: [:show] do
+  	resources :orders, only: [:new, :create]
+  end
+
 
   namespace :manage do
   	resources :auditoriums

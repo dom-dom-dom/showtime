@@ -1,0 +1,7 @@
+<%= simple_form_for @order, url: screening_orders_path do |f| %>
+	<%= f.input :name %>
+	<%= f.input :email %>
+	<%= f.input :card %>
+	<%= f.input :exp %>
+<%= f.submit %>
+<% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  card: MyString
+  exp: 2019-08-21
+  screening: one
+
+two:
+  name: MyString
+  email: MyString
+  card: MyString
+  exp: 2019-08-21
+  screening: two
