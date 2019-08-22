@@ -7,7 +7,13 @@
   	<% @screenings.each do |screening| %>
     <tr class="text-center">
       <td><p class="lead"><%= decorated_date(screening.start) %></p></td>
-      <td><%= link_to 'Buy Ticket', new_screening_order_path(screening), class: "btn btn-primary btn-lg" %></td>
+      <td>
+        <% if screening.seats == 0 %>
+          <%= link_to 'Sold Out', '#', class: "btn btn-primary btn-lg disabled" %>
+        <% else %>
+          <%= link_to 'Buy Ticket', new_screening_order_path(screening), class: "btn btn-primary btn-lg" %>
+        <% end %>
+        </td>
     </tr>
     <% end %>
   </tbody>

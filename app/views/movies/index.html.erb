@@ -8,7 +8,11 @@
 		  <ul class="list-group list-group-flush">
 		  	<% movie.screenings.order(start: :asc).limit(6).each do |screening| %>
 		    <li class="list-group-item"><%= decorated_date(screening.start) %>
+		    	<% if screening.seats == 0 %>
+		    		<%= link_to 'Sold Out', '#', class: "btn btn-primary float-right disabled" %>
+		    	<% else %>
 		    	<%= link_to 'Buy Ticket', new_screening_order_path(screening), class: "btn btn-primary float-right" %>
+		    	<% end %>
 		    </li>
 		    <% end %>
 		  </ul>
