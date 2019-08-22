@@ -9,6 +9,8 @@ class OrdersController < ApplicationController
 		@order = @screening.orders.new(order_params)
 
 		if @order.save
+			@order.screening.seats -= 1
+			@order.screening.save
 			redirect_to @order
 		else
 			render 'new'
