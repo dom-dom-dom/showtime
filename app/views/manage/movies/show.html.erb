@@ -1,2 +1,10 @@
 <%= @movie %>
 <%= @movie.auditorium %>
+
+<p><%= link_to 'add a screening', new_manage_screening_path %></p>
+
+<ul>
+	<% @movie.screenings.each do |screening| %>
+		<li><%= decorated_date(screening.start) %></li>
+	<% end %>
+</ul>

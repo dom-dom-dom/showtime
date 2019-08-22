@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  movie: one
+  seats: 1
+  start: 2019-08-21 20:20:08
+  end: 2019-08-21 20:20:08
+
+two:
+  movie: two
+  seats: 1
+  start: 2019-08-21 20:20:08
+  end: 2019-08-21 20:20:08

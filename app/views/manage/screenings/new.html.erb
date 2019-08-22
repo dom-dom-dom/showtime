@@ -1,0 +1,13 @@
+<%= simple_form_for @screening, url: manage_screenings_path do |f| %>
+	<%= f.association :movie, 
+	  label_method: :title, 
+	  value_method: :id, 
+	  include_blank: '- Select Movie -', 
+	  selected: @screening.movie ? @screening.movie.id : @screening.movie,
+	  :class=>"form-control" 
+	%>	
+<%= f.input :start %>
+	<%= f.input :end %>
+	<%= f.submit %>
+
+<% end %>

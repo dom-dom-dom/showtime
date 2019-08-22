@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :manage do
   	resources :auditoriums
     resources :movies
+    resources :screenings
   end
 
   root to: "movies#index"

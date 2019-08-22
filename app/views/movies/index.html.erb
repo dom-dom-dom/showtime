@@ -1,2 +1,18 @@
-<h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
+<div class="card-deck">
+	<% @movies.each do |movie| %>
+		<div class="card" style="width: 18rem;">
+		  <div class="card-body">
+		    <h5 class="card-title"><%= movie %></h5>
+		    <p class="card-text"><%= movie.auditorium %></p>
+		  </div>
+		  <ul class="list-group list-group-flush">
+		  	<% movie.screenings.order(start: :asc).limit(6).each do |screening| %>
+		    <li class="list-group-item"><%= decorated_date(screening.start) %></li>
+		    <% end %>
+		  </ul>
+		  <div class="card-body">
+		    <%= link_to 'View more screenings', movie_path(movie) %>
+		  </div>
+		</div>
+	<% end %>
+</div>
