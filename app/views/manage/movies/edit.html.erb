@@ -1,0 +1,6 @@
+<%= simple_form_for @movie, url: manage_movie_path do |f| %>
+ <%= render 'form', :f => f %>
+ <%= f.submit %>
+<% end %>
+<%= link_to 'Delete', manage_movie_path(@movie),
+                    method: :delete, data: { confirm: 'Are you sure?' }   %>

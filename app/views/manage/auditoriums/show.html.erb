@@ -4,3 +4,9 @@
 	<h1><%= @auditorium.name %></h1>
 	<small>capacity: <%= @auditorium.capacity %></small>
 </div>
+
+<ul>
+	<% @auditorium.movies.each do |movie| %>
+		<%= movie %>
+	<% end %>
+</ul>

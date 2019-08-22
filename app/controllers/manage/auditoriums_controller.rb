@@ -40,7 +40,7 @@ class Manage::AuditoriumsController < ApplicationController
 	    else
 	      render action: "edit"
 	    end
-	  end
+	end
 
 
 

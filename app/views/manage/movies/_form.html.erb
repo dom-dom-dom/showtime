@@ -1,0 +1,9 @@
+
+ <%= f.input :title %>
+ <%= f.association :auditorium, 
+  label_method: :name, 
+  value_method: :id, 
+  include_blank: '- Select Auditorium -', 
+  selected: @movie.auditorium ? @movie.auditorium.id : @movie.auditorium,
+  :class=>"form-control" 
+%>
