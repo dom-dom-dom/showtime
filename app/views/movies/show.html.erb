@@ -1,2 +1,15 @@
-<h1>Movies#show</h1>
-<p>Find me in app/views/movies/show.html.erb</p>
+<h1><%= @movie %></h1>
+
+<div class="table-responsive">
+  <table class="table table-bordered">
+ 
+  <tbody>
+  	<% @screenings.each do |screening| %>
+    <tr class="text-center">
+      <td><p class="lead"><%= decorated_date(screening.start) %></p></td>
+      <td><%= link_to 'Buy Ticket', '#', class: "btn btn-primary btn-lg" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  </table>
+</div>

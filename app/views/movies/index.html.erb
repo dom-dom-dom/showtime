@@ -3,11 +3,13 @@
 		<div class="card" style="width: 18rem;">
 		  <div class="card-body">
 		    <h5 class="card-title"><%= movie %></h5>
-		    <p class="card-text"><%= movie.auditorium %></p>
+		    <p class="card-text">Playing in auditorium <%= movie.auditorium %></p>
 		  </div>
 		  <ul class="list-group list-group-flush">
 		  	<% movie.screenings.order(start: :asc).limit(6).each do |screening| %>
-		    <li class="list-group-item"><%= decorated_date(screening.start) %></li>
+		    <li class="list-group-item"><%= decorated_date(screening.start) %>
+		    	<%= link_to 'Buy Ticket', '#', class: "btn btn-primary float-right" %>
+		    </li>
 		    <% end %>
 		  </ul>
 		  <div class="card-body">
