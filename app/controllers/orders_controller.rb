@@ -9,6 +9,7 @@ class OrdersController < ApplicationController
 		@order = @screening.orders.new(order_params)
 		@order.movie = @screening.movie
 		if @order.save
+			OrderMailer.order_confirmation(@order).deliver_later
 			@order.screening.seats -= 1
 			@order.screening.save
 			redirect_to @order
