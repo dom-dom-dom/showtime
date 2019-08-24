@@ -1,18 +1,23 @@
+<%= search_form_for @q, url: manage_orders_path do |f| %>
+
+  <%= f.collection_select :movie_title_eq, Movie.all, :title, :title, include_blank: 'All' %>
+
+  <%= f.submit %>
+<% end %>
+
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Movie</th>
       <th scope="col">Screening</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
-      <th scope="col">Date</th>
+      <th scope="col">Order Date</th>
     </tr>
   </thead>
   <tbody>
 	<% @orders.each do |order| %>
 		<tr>
-	      <th scope="row"><%= order.id %></th>
 	      <td><%= order.movie %></td>
 	      <td><%= decorated_date(order.screening.start) %></td>
 	      <td><%= order.name %></td>
