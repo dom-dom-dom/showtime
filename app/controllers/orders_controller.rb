@@ -12,7 +12,6 @@ class OrdersController < ApplicationController
 			OrderMailer.order_confirmation(@order).deliver_later
 			@order.screening.seats -= 1
 			@order.screening.save
-			redirect_to @order
 		else
 			render 'new'
 		end

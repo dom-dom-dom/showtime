@@ -1,3 +1,8 @@
+<p><%= link_to 'cancel', :back, class: "float-right" %></p>
+<h1>Add New Screening</h1>
+<hr/>
+
+<div class="jumbotron">
 <%= simple_form_for @screening, url: manage_screenings_path do |f| %>
 	<%= f.association :movie, 
 	  label_method: :title, 
@@ -11,3 +16,4 @@
 	<%= f.submit %>
 
 <% end %>
+</div>

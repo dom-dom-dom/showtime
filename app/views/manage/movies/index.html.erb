@@ -1,3 +1,6 @@
+<p><%= link_to 'add movie', new_manage_movie_path, class: "btn btn-primary float-right" %></p>
+<h1>Manage Movies</h1>
+<hr/>
 <ul class="list-group">
 	<% @movies.each do |movie| %>
 		<li class="list-group-item"><%= link_to movie, manage_movie_path(movie) %></li>

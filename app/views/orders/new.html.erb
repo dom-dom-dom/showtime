@@ -1,7 +1,16 @@
-<%= simple_form_for @order, url: screening_orders_path do |f| %>
-	<%= f.input :name %>
-	<%= f.input :email %>
-	<%= f.input :card %>
-	<%= f.input :exp %>
-<%= f.submit %>
-<% end %>
+<p><%= link_to 'cancel', :back, class: "float-right" %></p>
+<h1>Buy a Ticket</h1>
+<hr/>
+<div class="jumbotron">
+	<% if @order.screening.sold_out? %>
+		<h1>This movie is sold out</h1>
+	<% else %>
+		<%= simple_form_for @order, url: screening_orders_path do |f| %>
+			<%= f.input :name %>
+			<%= f.input :email %>
+			<%= f.input :card %>
+			<%= f.input :exp %>
+		<%= f.submit %>
+		<% end %>
+	<% end %>
+</div>

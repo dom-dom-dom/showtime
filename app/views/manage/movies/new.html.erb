@@ -1,4 +1,9 @@
-<%= simple_form_for @movie, url: manage_movies_path do |f| %>
- <%= render 'form', :f => f %>
- <%= f.submit %>
-<% end %>
+<p><%= link_to 'cancel', manage_movies_path, class: "float-right" %></p>
+<h1>Add New Movie</h1>
+<hr/>
+<div class="jumbotron">
+	<%= simple_form_for @movie, url: manage_movies_path do |f| %>
+	 <%= render 'form', :f => f %>
+	 <%= f.submit class: 'btn-primary btn-lg' %>
+	<% end %>
+</div>

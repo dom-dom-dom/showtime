@@ -5,25 +5,27 @@
   <%= f.submit %>
 <% end %>
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">Movie</th>
-      <th scope="col">Screening</th>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Order Date</th>
-    </tr>
-  </thead>
-  <tbody>
-	<% @orders.each do |order| %>
-		<tr>
-	      <td><%= order.movie %></td>
-	      <td><%= decorated_date(order.screening.start) %></td>
-	      <td><%= order.name %></td>
-	      <td><%= order.email %></td>
-	      <td><%= decorated_date(order.created_at) %></td>
-	    </tr>
-	<% end %>
- </tbody>
-</table>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Movie</th>
+        <th scope="col">Screening</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Order Date</th>
+      </tr>
+    </thead>
+    <tbody>
+  	<% @orders.each do |order| %>
+  		<tr>
+  	      <td><%= order.movie %></td>
+  	      <td><%= decorated_date(order.screening.start) %></td>
+  	      <td><%= order.name %></td>
+  	      <td><%= order.email %></td>
+  	      <td><%= decorated_date(order.created_at) %></td>
+  	    </tr>
+  	<% end %>
+   </tbody>
+  </table>
+</div>
