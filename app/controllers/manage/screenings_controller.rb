@@ -6,7 +6,6 @@ class Manage::ScreeningsController < ApplicationController
 
   def create
   	@screening = Screening.new(screening_params)
-  	get_screening_capacity
   	if @screening.save
   		redirect_to manage_movie_path(@screening.movie)
   	else
@@ -22,10 +21,6 @@ class Manage::ScreeningsController < ApplicationController
   		:start,
   		:end,
   		)
-  end
-
-  def get_screening_capacity
-    @screening.seats = @screening.movie.auditorium.capacity unless @screening.movie.blank?
   end
 
 end
