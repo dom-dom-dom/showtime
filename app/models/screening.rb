@@ -5,4 +5,7 @@ class Screening < ApplicationRecord
   def sold_out?
   	self.seats === 0
   end
+
+  validates :movie_id, 
+	  presence: true
 end
