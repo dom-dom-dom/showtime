@@ -2,18 +2,25 @@ class OrdersController < ApplicationController
 	def new
 		@screening = Screening.find(params[:screening_id])
 		@order = @screening.orders.new
+		if @screening.sold_out?
+			redirect_to movie_path(@screening.movie)
+		end
 	end
 
 	def create
 		@screening = Screening.find(params[:screening_id])
 		@order = @screening.orders.new(order_params)
 		@order.movie = @screening.movie
-		if @order.save
-			OrderMailer.order_confirmation(@order).deliver_later
-			@order.screening.seats -= 1
-			@order.screening.save
+		if @screening.sold_out?
+			redirect_to new_screening_order_path(@screening)
 		else
-			render 'new'
+			if @order.save
+				OrderMailer.order_confirmation(@order).deliver_later
+				@order.screening.seats -= 1
+				@order.screening.save
+			else
+				render 'new'
+			end
 		end
 	end
 
